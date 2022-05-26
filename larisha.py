@@ -1,4 +1,5 @@
 from ast import match_case
+from inspect import Parameter
 from multiprocessing.dummy import Condition
 import sys
 from antlr4 import *
@@ -8,6 +9,7 @@ from dist.LarishaParser import LarishaParser
 from dist.LarishaVisitor import LarishaVisitor
 from utils import common
 from utils import operation
+from includes import methods
 
 ##########################
 # Global variables
@@ -17,6 +19,7 @@ variables = {}
 
 functions = {}
 
+functionsExport = {}
 
 ##########################
 # Helper functions
@@ -177,7 +180,20 @@ class MyVisitor(LarishaVisitor):
     def visitFunctionCallExpression(self, ctx: LarishaParser.FunctionCallExpressionContext):
         return super().visitFunctionCallExpression(ctx)
     
-
+    def visitExport(self, ctx: LarishaParser.ExportContext):
+        name = ctx.IDENTIFIER().getText()
+        if(name in functionsExport):
+            common.error(f"Function {name} is already exported")
+        try:
+            exportedFunction = getattr(methods, name)
+        except Exception as e:
+            common.error(f"Function {name} is not defined")
+        print(exportedFunction)
+        parameters = ctx.parameters()
+        if(parameters):
+            parameters = parameters.IDENTIFIER()
+            parameters = [param.getText() for param in parameters]
+        print(f"Exporting function {name} with parameters {parameters}")
 
 
 

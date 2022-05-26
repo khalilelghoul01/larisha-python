@@ -8,3 +8,4 @@ fun lol(f, x) {
 }
 
 a = (lol(10, 20));
+export print(a,b,c,d,e,f);
