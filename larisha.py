@@ -4,7 +4,6 @@ import inspect
 from multiprocessing.dummy import Condition
 import sys
 from antlr4 import *
-from more_itertools import exactly_n
 from dist.LarishaLexer import LarishaLexer
 from dist.LarishaParser import LarishaParser
 from dist.LarishaVisitor import LarishaVisitor
@@ -25,7 +24,17 @@ functionsExport = {}
 ##########################
 # Helper functions
 ##########################
-
+def run_code(code: str):
+    data = InputStream(code)
+    # lexer
+    lexer = LarishaLexer(data)
+    stream = CommonTokenStream(lexer)
+    # parser
+    parser = LarishaParser(stream)
+    tree = parser.program()
+    # evaluator
+    visitor = LarishaInterpreter()
+    return visitor.visit(tree)
 
 
 ##########################
@@ -38,7 +47,7 @@ def get_username():
     return getpwuid(getuid())[0]
 
 
-class MyVisitor(LarishaVisitor):
+class LarishaInterpreter(LarishaVisitor):
     def __init__(self):
         pass
 
@@ -199,6 +208,17 @@ class MyVisitor(LarishaVisitor):
             if(len(functionsExportParams) != 0):
                 common.error(f"{name} expects {len(functionsExportParams)} arguments, but none were given")
         functionsExport[name] = exportedFunction
+
+    def visitImportLib(self, ctx: LarishaParser.ImportLibContext):
+        nameAs = ctx.IDENTIFIER()
+        if(nameAs):
+            nameAs = nameAs.getText()
+        stringLib = ctx.STRING().getText()[1:-1]
+        print(stringLib)
+        return super().visitImportLib(ctx)
+
+
+
 
 
 
@@ -396,5 +416,5 @@ if __name__ == "__main__":
     parser = LarishaParser(stream)
     tree = parser.program()
     # evaluator
-    visitor = MyVisitor()
+    visitor = LarishaInterpreter()
     output = visitor.visit(tree)

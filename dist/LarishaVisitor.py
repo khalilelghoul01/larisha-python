@@ -59,6 +59,11 @@ class LarishaVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by LarishaParser#importLib.
+    def visitImportLib(self, ctx:LarishaParser.ImportLibContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by LarishaParser#arguments.
     def visitArguments(self, ctx:LarishaParser.ArgumentsContext):
         return self.visitChildren(ctx)

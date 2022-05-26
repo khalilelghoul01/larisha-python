@@ -98,6 +98,15 @@ class LarishaListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by LarishaParser#importLib.
+    def enterImportLib(self, ctx:LarishaParser.ImportLibContext):
+        pass
+
+    # Exit a parse tree produced by LarishaParser#importLib.
+    def exitImportLib(self, ctx:LarishaParser.ImportLibContext):
+        pass
+
+
     # Enter a parse tree produced by LarishaParser#arguments.
     def enterArguments(self, ctx:LarishaParser.ArgumentsContext):
         pass

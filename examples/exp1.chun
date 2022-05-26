@@ -1,4 +1,5 @@
-export println(a)
+export println(a);
+import "stdlib.jl";
 
 fun main(){
     println(add(1,2));

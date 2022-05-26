@@ -2,7 +2,7 @@ grammar Larisha;
 
 program: line* EOF;
 
-line: statement | ifBlock | whileBlock | break ';'| functionDefinition | functionCall ';' | returnStatement ';' | export ;
+line: statement | ifBlock | whileBlock | break ';'| functionDefinition | functionCall ';' | returnStatement ';' | export ';' | importLib ';' ;
 
 statement: ( assignment ) ';';
 
@@ -23,6 +23,10 @@ functionCall: IDENTIFIER '(' arguments? ')' ;
 export: EXPORT IDENTIFIER '(' parameters? ')';
 
 EXPORT: 'export';
+
+importLib : IMPORT STRING ('as' IDENTIFIER)?;
+
+IMPORT: 'import';
 
 arguments: expression (',' expression)*;
 FUNCTION: 'fun';
