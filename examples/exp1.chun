@@ -1,9 +1,10 @@
 export println(a);
 import "stdlib.chun";
 
-fun main(){
-    println(__tag__);
-    println(add(1,2));
+fun main(f){
+    f = 100;
+    println(stdlib->pow2(f));
+    println(add(1,f));
 }
 
 fun add(a,b){
@@ -14,4 +15,4 @@ fun muliply(a,b){
     return a*b;
 }
 
-main();
+main(stdlib->f);

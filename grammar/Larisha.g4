@@ -24,7 +24,7 @@ export: EXPORT IDENTIFIER '(' parameters? ')';
 
 EXPORT: 'export';
 
-importLib : IMPORT STRING ('as' IDENTIFIER)?;
+importLib : IMPORT STRING;
 
 IMPORT: 'import';
 
@@ -68,4 +68,4 @@ WS: [ \t\n\r]+ -> skip;
 COMMENT: '/*' .*? '*/' -> skip;
 
 LINE_COMMENT: '//' ~[\r\n]* -> skip;
-IDENTIFIER: ([a-zA-Z_][a-zA-Z0-9_]*)+('.'([a-zA-Z_][a-zA-Z0-9_]*))*;
+IDENTIFIER: ([a-zA-Z_][a-zA-Z0-9_]*)+('->'([a-zA-Z_][a-zA-Z0-9_]*))*;

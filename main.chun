@@ -1,0 +1,7 @@
+import "lib/io.chun";
+import "lib/http.chun";
+
+
+
+io->println("Hello World!");
+io->println(io->argv());

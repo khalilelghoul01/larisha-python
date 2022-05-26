@@ -1,12 +1,12 @@
 export println(a);
-
 fun main(){
-    println(__tag__);
-    println(add(11,2));
+    
 }
 
-fun add(a,b){
-    return a+b;
+f = 1000000000000;
+
+fun pow2(a){
+    return a*a;
 }
 
 fun muliply(a,b){

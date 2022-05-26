@@ -10,7 +10,7 @@ else:
 
 def serializedATN():
     return [
-        4,1,39,212,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
+        4,1,38,209,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
         6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,
         2,14,7,14,2,15,7,15,2,16,7,16,2,17,7,17,2,18,7,18,2,19,7,19,2,20,
         7,20,2,21,7,21,1,0,5,0,46,8,0,10,0,12,0,49,9,0,1,0,1,0,1,1,1,1,1,
@@ -19,69 +19,67 @@ def serializedATN():
         3,4,87,8,4,1,4,1,4,1,4,1,4,1,5,1,5,3,5,95,8,5,1,6,1,6,1,6,1,6,1,
         6,1,6,3,6,103,8,6,1,6,1,6,1,7,1,7,1,7,1,7,3,7,111,8,7,1,7,1,7,1,
         7,1,8,1,8,1,8,3,8,119,8,8,1,8,1,8,1,9,1,9,1,9,1,9,3,9,127,8,9,1,
-        9,1,9,1,10,1,10,1,10,1,10,3,10,135,8,10,1,11,1,11,1,11,5,11,140,
-        8,11,10,11,12,11,143,9,11,1,12,1,12,1,12,5,12,148,8,12,10,12,12,
-        12,151,9,12,1,13,1,13,1,13,1,13,1,13,1,13,1,13,1,13,1,13,1,13,1,
-        13,1,13,3,13,165,8,13,1,13,1,13,1,13,1,13,1,13,1,13,1,13,1,13,1,
-        13,1,13,1,13,1,13,1,13,1,13,1,13,1,13,5,13,183,8,13,10,13,12,13,
-        186,9,13,1,14,1,14,1,15,1,15,1,16,1,16,1,17,1,17,1,18,1,18,1,19,
-        1,19,5,19,200,8,19,10,19,12,19,203,9,19,1,19,1,19,1,20,1,20,1,21,
-        1,21,1,21,1,21,0,1,26,22,0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,
-        30,32,34,36,38,40,42,0,5,1,0,11,13,2,0,10,10,14,14,1,0,15,20,1,0,
-        21,22,1,0,31,35,217,0,47,1,0,0,0,2,71,1,0,0,0,4,73,1,0,0,0,6,76,
-        1,0,0,0,8,80,1,0,0,0,10,94,1,0,0,0,12,96,1,0,0,0,14,106,1,0,0,0,
-        16,115,1,0,0,0,18,122,1,0,0,0,20,130,1,0,0,0,22,136,1,0,0,0,24,144,
-        1,0,0,0,26,164,1,0,0,0,28,187,1,0,0,0,30,189,1,0,0,0,32,191,1,0,
-        0,0,34,193,1,0,0,0,36,195,1,0,0,0,38,197,1,0,0,0,40,206,1,0,0,0,
-        42,208,1,0,0,0,44,46,3,2,1,0,45,44,1,0,0,0,46,49,1,0,0,0,47,45,1,
-        0,0,0,47,48,1,0,0,0,48,50,1,0,0,0,49,47,1,0,0,0,50,51,5,0,0,1,51,
-        1,1,0,0,0,52,72,3,4,2,0,53,72,3,8,4,0,54,72,3,12,6,0,55,56,3,40,
-        20,0,56,57,5,1,0,0,57,72,1,0,0,0,58,72,3,14,7,0,59,60,3,16,8,0,60,
-        61,5,1,0,0,61,72,1,0,0,0,62,63,3,42,21,0,63,64,5,1,0,0,64,72,1,0,
-        0,0,65,66,3,18,9,0,66,67,5,1,0,0,67,72,1,0,0,0,68,69,3,20,10,0,69,
-        70,5,1,0,0,70,72,1,0,0,0,71,52,1,0,0,0,71,53,1,0,0,0,71,54,1,0,0,
-        0,71,55,1,0,0,0,71,58,1,0,0,0,71,59,1,0,0,0,71,62,1,0,0,0,71,65,
-        1,0,0,0,71,68,1,0,0,0,72,3,1,0,0,0,73,74,3,6,3,0,74,75,5,1,0,0,75,
-        5,1,0,0,0,76,77,5,39,0,0,77,78,5,2,0,0,78,79,3,26,13,0,79,7,1,0,
-        0,0,80,86,5,3,0,0,81,82,5,4,0,0,82,83,3,26,13,0,83,84,5,5,0,0,84,
-        87,1,0,0,0,85,87,3,26,13,0,86,81,1,0,0,0,86,85,1,0,0,0,87,88,1,0,
-        0,0,88,89,3,38,19,0,89,90,5,6,0,0,90,91,3,10,5,0,91,9,1,0,0,0,92,
-        95,3,8,4,0,93,95,3,38,19,0,94,92,1,0,0,0,94,93,1,0,0,0,95,11,1,0,
-        0,0,96,102,5,27,0,0,97,98,5,4,0,0,98,99,3,26,13,0,99,100,5,5,0,0,
-        100,103,1,0,0,0,101,103,3,26,13,0,102,97,1,0,0,0,102,101,1,0,0,0,
-        103,104,1,0,0,0,104,105,3,38,19,0,105,13,1,0,0,0,106,107,5,30,0,
-        0,107,108,5,39,0,0,108,110,5,4,0,0,109,111,3,24,12,0,110,109,1,0,
-        0,0,110,111,1,0,0,0,111,112,1,0,0,0,112,113,5,5,0,0,113,114,3,38,
-        19,0,114,15,1,0,0,0,115,116,5,39,0,0,116,118,5,4,0,0,117,119,3,22,
-        11,0,118,117,1,0,0,0,118,119,1,0,0,0,119,120,1,0,0,0,120,121,5,5,
-        0,0,121,17,1,0,0,0,122,123,5,28,0,0,123,124,5,39,0,0,124,126,5,4,
-        0,0,125,127,3,24,12,0,126,125,1,0,0,0,126,127,1,0,0,0,127,128,1,
-        0,0,0,128,129,5,5,0,0,129,19,1,0,0,0,130,131,5,29,0,0,131,134,5,
-        32,0,0,132,133,5,7,0,0,133,135,5,39,0,0,134,132,1,0,0,0,134,135,
-        1,0,0,0,135,21,1,0,0,0,136,141,3,26,13,0,137,138,5,8,0,0,138,140,
-        3,26,13,0,139,137,1,0,0,0,140,143,1,0,0,0,141,139,1,0,0,0,141,142,
-        1,0,0,0,142,23,1,0,0,0,143,141,1,0,0,0,144,149,5,39,0,0,145,146,
-        5,8,0,0,146,148,5,39,0,0,147,145,1,0,0,0,148,151,1,0,0,0,149,147,
-        1,0,0,0,149,150,1,0,0,0,150,25,1,0,0,0,151,149,1,0,0,0,152,153,6,
-        13,-1,0,153,165,3,36,18,0,154,165,5,39,0,0,155,156,5,4,0,0,156,157,
-        3,26,13,0,157,158,5,5,0,0,158,165,1,0,0,0,159,160,5,9,0,0,160,165,
-        3,26,13,7,161,162,5,10,0,0,162,165,3,26,13,6,163,165,3,16,8,0,164,
-        152,1,0,0,0,164,154,1,0,0,0,164,155,1,0,0,0,164,159,1,0,0,0,164,
-        161,1,0,0,0,164,163,1,0,0,0,165,184,1,0,0,0,166,167,10,5,0,0,167,
-        168,3,28,14,0,168,169,3,26,13,6,169,183,1,0,0,0,170,171,10,4,0,0,
-        171,172,3,30,15,0,172,173,3,26,13,5,173,183,1,0,0,0,174,175,10,3,
-        0,0,175,176,3,32,16,0,176,177,3,26,13,4,177,183,1,0,0,0,178,179,
-        10,2,0,0,179,180,3,34,17,0,180,181,3,26,13,3,181,183,1,0,0,0,182,
-        166,1,0,0,0,182,170,1,0,0,0,182,174,1,0,0,0,182,178,1,0,0,0,183,
-        186,1,0,0,0,184,182,1,0,0,0,184,185,1,0,0,0,185,27,1,0,0,0,186,184,
-        1,0,0,0,187,188,7,0,0,0,188,29,1,0,0,0,189,190,7,1,0,0,190,31,1,
-        0,0,0,191,192,7,2,0,0,192,33,1,0,0,0,193,194,7,3,0,0,194,35,1,0,
-        0,0,195,196,7,4,0,0,196,37,1,0,0,0,197,201,5,23,0,0,198,200,3,2,
-        1,0,199,198,1,0,0,0,200,203,1,0,0,0,201,199,1,0,0,0,201,202,1,0,
-        0,0,202,204,1,0,0,0,203,201,1,0,0,0,204,205,5,24,0,0,205,39,1,0,
-        0,0,206,207,5,25,0,0,207,41,1,0,0,0,208,209,5,26,0,0,209,210,3,26,
-        13,0,210,43,1,0,0,0,15,47,71,86,94,102,110,118,126,134,141,149,164,
-        182,184,201
+        9,1,9,1,10,1,10,1,10,1,11,1,11,1,11,5,11,137,8,11,10,11,12,11,140,
+        9,11,1,12,1,12,1,12,5,12,145,8,12,10,12,12,12,148,9,12,1,13,1,13,
+        1,13,1,13,1,13,1,13,1,13,1,13,1,13,1,13,1,13,1,13,3,13,162,8,13,
+        1,13,1,13,1,13,1,13,1,13,1,13,1,13,1,13,1,13,1,13,1,13,1,13,1,13,
+        1,13,1,13,1,13,5,13,180,8,13,10,13,12,13,183,9,13,1,14,1,14,1,15,
+        1,15,1,16,1,16,1,17,1,17,1,18,1,18,1,19,1,19,5,19,197,8,19,10,19,
+        12,19,200,9,19,1,19,1,19,1,20,1,20,1,21,1,21,1,21,1,21,0,1,26,22,
+        0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,0,5,
+        1,0,10,12,2,0,9,9,13,13,1,0,14,19,1,0,20,21,1,0,30,34,213,0,47,1,
+        0,0,0,2,71,1,0,0,0,4,73,1,0,0,0,6,76,1,0,0,0,8,80,1,0,0,0,10,94,
+        1,0,0,0,12,96,1,0,0,0,14,106,1,0,0,0,16,115,1,0,0,0,18,122,1,0,0,
+        0,20,130,1,0,0,0,22,133,1,0,0,0,24,141,1,0,0,0,26,161,1,0,0,0,28,
+        184,1,0,0,0,30,186,1,0,0,0,32,188,1,0,0,0,34,190,1,0,0,0,36,192,
+        1,0,0,0,38,194,1,0,0,0,40,203,1,0,0,0,42,205,1,0,0,0,44,46,3,2,1,
+        0,45,44,1,0,0,0,46,49,1,0,0,0,47,45,1,0,0,0,47,48,1,0,0,0,48,50,
+        1,0,0,0,49,47,1,0,0,0,50,51,5,0,0,1,51,1,1,0,0,0,52,72,3,4,2,0,53,
+        72,3,8,4,0,54,72,3,12,6,0,55,56,3,40,20,0,56,57,5,1,0,0,57,72,1,
+        0,0,0,58,72,3,14,7,0,59,60,3,16,8,0,60,61,5,1,0,0,61,72,1,0,0,0,
+        62,63,3,42,21,0,63,64,5,1,0,0,64,72,1,0,0,0,65,66,3,18,9,0,66,67,
+        5,1,0,0,67,72,1,0,0,0,68,69,3,20,10,0,69,70,5,1,0,0,70,72,1,0,0,
+        0,71,52,1,0,0,0,71,53,1,0,0,0,71,54,1,0,0,0,71,55,1,0,0,0,71,58,
+        1,0,0,0,71,59,1,0,0,0,71,62,1,0,0,0,71,65,1,0,0,0,71,68,1,0,0,0,
+        72,3,1,0,0,0,73,74,3,6,3,0,74,75,5,1,0,0,75,5,1,0,0,0,76,77,5,38,
+        0,0,77,78,5,2,0,0,78,79,3,26,13,0,79,7,1,0,0,0,80,86,5,3,0,0,81,
+        82,5,4,0,0,82,83,3,26,13,0,83,84,5,5,0,0,84,87,1,0,0,0,85,87,3,26,
+        13,0,86,81,1,0,0,0,86,85,1,0,0,0,87,88,1,0,0,0,88,89,3,38,19,0,89,
+        90,5,6,0,0,90,91,3,10,5,0,91,9,1,0,0,0,92,95,3,8,4,0,93,95,3,38,
+        19,0,94,92,1,0,0,0,94,93,1,0,0,0,95,11,1,0,0,0,96,102,5,26,0,0,97,
+        98,5,4,0,0,98,99,3,26,13,0,99,100,5,5,0,0,100,103,1,0,0,0,101,103,
+        3,26,13,0,102,97,1,0,0,0,102,101,1,0,0,0,103,104,1,0,0,0,104,105,
+        3,38,19,0,105,13,1,0,0,0,106,107,5,29,0,0,107,108,5,38,0,0,108,110,
+        5,4,0,0,109,111,3,24,12,0,110,109,1,0,0,0,110,111,1,0,0,0,111,112,
+        1,0,0,0,112,113,5,5,0,0,113,114,3,38,19,0,114,15,1,0,0,0,115,116,
+        5,38,0,0,116,118,5,4,0,0,117,119,3,22,11,0,118,117,1,0,0,0,118,119,
+        1,0,0,0,119,120,1,0,0,0,120,121,5,5,0,0,121,17,1,0,0,0,122,123,5,
+        27,0,0,123,124,5,38,0,0,124,126,5,4,0,0,125,127,3,24,12,0,126,125,
+        1,0,0,0,126,127,1,0,0,0,127,128,1,0,0,0,128,129,5,5,0,0,129,19,1,
+        0,0,0,130,131,5,28,0,0,131,132,5,31,0,0,132,21,1,0,0,0,133,138,3,
+        26,13,0,134,135,5,7,0,0,135,137,3,26,13,0,136,134,1,0,0,0,137,140,
+        1,0,0,0,138,136,1,0,0,0,138,139,1,0,0,0,139,23,1,0,0,0,140,138,1,
+        0,0,0,141,146,5,38,0,0,142,143,5,7,0,0,143,145,5,38,0,0,144,142,
+        1,0,0,0,145,148,1,0,0,0,146,144,1,0,0,0,146,147,1,0,0,0,147,25,1,
+        0,0,0,148,146,1,0,0,0,149,150,6,13,-1,0,150,162,3,36,18,0,151,162,
+        5,38,0,0,152,153,5,4,0,0,153,154,3,26,13,0,154,155,5,5,0,0,155,162,
+        1,0,0,0,156,157,5,8,0,0,157,162,3,26,13,7,158,159,5,9,0,0,159,162,
+        3,26,13,6,160,162,3,16,8,0,161,149,1,0,0,0,161,151,1,0,0,0,161,152,
+        1,0,0,0,161,156,1,0,0,0,161,158,1,0,0,0,161,160,1,0,0,0,162,181,
+        1,0,0,0,163,164,10,5,0,0,164,165,3,28,14,0,165,166,3,26,13,6,166,
+        180,1,0,0,0,167,168,10,4,0,0,168,169,3,30,15,0,169,170,3,26,13,5,
+        170,180,1,0,0,0,171,172,10,3,0,0,172,173,3,32,16,0,173,174,3,26,
+        13,4,174,180,1,0,0,0,175,176,10,2,0,0,176,177,3,34,17,0,177,178,
+        3,26,13,3,178,180,1,0,0,0,179,163,1,0,0,0,179,167,1,0,0,0,179,171,
+        1,0,0,0,179,175,1,0,0,0,180,183,1,0,0,0,181,179,1,0,0,0,181,182,
+        1,0,0,0,182,27,1,0,0,0,183,181,1,0,0,0,184,185,7,0,0,0,185,29,1,
+        0,0,0,186,187,7,1,0,0,187,31,1,0,0,0,188,189,7,2,0,0,189,33,1,0,
+        0,0,190,191,7,3,0,0,191,35,1,0,0,0,192,193,7,4,0,0,193,37,1,0,0,
+        0,194,198,5,22,0,0,195,197,3,2,1,0,196,195,1,0,0,0,197,200,1,0,0,
+        0,198,196,1,0,0,0,198,199,1,0,0,0,199,201,1,0,0,0,200,198,1,0,0,
+        0,201,202,5,23,0,0,202,39,1,0,0,0,203,204,5,24,0,0,204,41,1,0,0,
+        0,205,206,5,25,0,0,206,207,3,26,13,0,207,43,1,0,0,0,14,47,71,86,
+        94,102,110,118,126,138,146,161,179,181,198
     ]
 
 class LarishaParser ( Parser ):
@@ -95,10 +93,10 @@ class LarishaParser ( Parser ):
     sharedContextCache = PredictionContextCache()
 
     literalNames = [ "<INVALID>", "';'", "'='", "'if'", "'('", "')'", "'else'", 
-                     "'as'", "','", "'!'", "'-'", "'*'", "'/'", "'%'", "'+'", 
-                     "'<'", "'>'", "'<='", "'>='", "'=='", "'!='", "'&&'", 
-                     "'||'", "'{'", "'}'", "'break'", "'return'", "'while'", 
-                     "'export'", "'import'", "'fun'" ]
+                     "','", "'!'", "'-'", "'*'", "'/'", "'%'", "'+'", "'<'", 
+                     "'>'", "'<='", "'>='", "'=='", "'!='", "'&&'", "'||'", 
+                     "'{'", "'}'", "'break'", "'return'", "'while'", "'export'", 
+                     "'import'", "'fun'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
@@ -106,8 +104,8 @@ class LarishaParser ( Parser ):
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "WHILE", "EXPORT", 
-                      "IMPORT", "FUNCTION", "BOOL", "STRING", "FLOAT", "INTEGER", 
+                      "<INVALID>", "<INVALID>", "WHILE", "EXPORT", "IMPORT", 
+                      "FUNCTION", "BOOL", "STRING", "FLOAT", "INTEGER", 
                       "CHAR", "WS", "COMMENT", "LINE_COMMENT", "IDENTIFIER" ]
 
     RULE_program = 0
@@ -165,20 +163,19 @@ class LarishaParser ( Parser ):
     T__22=23
     T__23=24
     T__24=25
-    T__25=26
-    WHILE=27
-    EXPORT=28
-    IMPORT=29
-    FUNCTION=30
-    BOOL=31
-    STRING=32
-    FLOAT=33
-    INTEGER=34
-    CHAR=35
-    WS=36
-    COMMENT=37
-    LINE_COMMENT=38
-    IDENTIFIER=39
+    WHILE=26
+    EXPORT=27
+    IMPORT=28
+    FUNCTION=29
+    BOOL=30
+    STRING=31
+    FLOAT=32
+    INTEGER=33
+    CHAR=34
+    WS=35
+    COMMENT=36
+    LINE_COMMENT=37
+    IDENTIFIER=38
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -236,7 +233,7 @@ class LarishaParser ( Parser ):
             self.state = 47
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << LarishaParser.T__2) | (1 << LarishaParser.T__24) | (1 << LarishaParser.T__25) | (1 << LarishaParser.WHILE) | (1 << LarishaParser.EXPORT) | (1 << LarishaParser.IMPORT) | (1 << LarishaParser.FUNCTION) | (1 << LarishaParser.IDENTIFIER))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << LarishaParser.T__2) | (1 << LarishaParser.T__23) | (1 << LarishaParser.T__24) | (1 << LarishaParser.WHILE) | (1 << LarishaParser.EXPORT) | (1 << LarishaParser.IMPORT) | (1 << LarishaParser.FUNCTION) | (1 << LarishaParser.IDENTIFIER))) != 0):
                 self.state = 44
                 self.line()
                 self.state = 49
@@ -633,7 +630,7 @@ class LarishaParser ( Parser ):
                 self.state = 92
                 self.ifBlock()
                 pass
-            elif token in [LarishaParser.T__22]:
+            elif token in [LarishaParser.T__21]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 93
                 self.block()
@@ -848,7 +845,7 @@ class LarishaParser ( Parser ):
             self.state = 118
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << LarishaParser.T__3) | (1 << LarishaParser.T__8) | (1 << LarishaParser.T__9) | (1 << LarishaParser.BOOL) | (1 << LarishaParser.STRING) | (1 << LarishaParser.FLOAT) | (1 << LarishaParser.INTEGER) | (1 << LarishaParser.CHAR) | (1 << LarishaParser.IDENTIFIER))) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << LarishaParser.T__3) | (1 << LarishaParser.T__7) | (1 << LarishaParser.T__8) | (1 << LarishaParser.BOOL) | (1 << LarishaParser.STRING) | (1 << LarishaParser.FLOAT) | (1 << LarishaParser.INTEGER) | (1 << LarishaParser.CHAR) | (1 << LarishaParser.IDENTIFIER))) != 0):
                 self.state = 117
                 self.arguments()
 
@@ -946,9 +943,6 @@ class LarishaParser ( Parser ):
         def STRING(self):
             return self.getToken(LarishaParser.STRING, 0)
 
-        def IDENTIFIER(self):
-            return self.getToken(LarishaParser.IDENTIFIER, 0)
-
         def getRuleIndex(self):
             return LarishaParser.RULE_importLib
 
@@ -973,23 +967,12 @@ class LarishaParser ( Parser ):
 
         localctx = LarishaParser.ImportLibContext(self, self._ctx, self.state)
         self.enterRule(localctx, 20, self.RULE_importLib)
-        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 130
             self.match(LarishaParser.IMPORT)
             self.state = 131
             self.match(LarishaParser.STRING)
-            self.state = 134
-            self._errHandler.sync(self)
-            _la = self._input.LA(1)
-            if _la==LarishaParser.T__6:
-                self.state = 132
-                self.match(LarishaParser.T__6)
-                self.state = 133
-                self.match(LarishaParser.IDENTIFIER)
-
-
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1040,17 +1023,17 @@ class LarishaParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 136
+            self.state = 133
             self.expression(0)
-            self.state = 141
+            self.state = 138
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==LarishaParser.T__7:
-                self.state = 137
-                self.match(LarishaParser.T__7)
-                self.state = 138
+            while _la==LarishaParser.T__6:
+                self.state = 134
+                self.match(LarishaParser.T__6)
+                self.state = 135
                 self.expression(0)
-                self.state = 143
+                self.state = 140
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -1103,17 +1086,17 @@ class LarishaParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 144
+            self.state = 141
             self.match(LarishaParser.IDENTIFIER)
-            self.state = 149
+            self.state = 146
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==LarishaParser.T__7:
-                self.state = 145
-                self.match(LarishaParser.T__7)
-                self.state = 146
+            while _la==LarishaParser.T__6:
+                self.state = 142
+                self.match(LarishaParser.T__6)
+                self.state = 143
                 self.match(LarishaParser.IDENTIFIER)
-                self.state = 151
+                self.state = 148
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -1425,15 +1408,15 @@ class LarishaParser ( Parser ):
         self.enterRecursionRule(localctx, 26, self.RULE_expression, _p)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 164
+            self.state = 161
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,11,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,10,self._ctx)
             if la_ == 1:
                 localctx = LarishaParser.ConstantExpressionContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
 
-                self.state = 153
+                self.state = 150
                 self.constant()
                 pass
 
@@ -1441,7 +1424,7 @@ class LarishaParser ( Parser ):
                 localctx = LarishaParser.IdentifierExpressionContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 154
+                self.state = 151
                 self.match(LarishaParser.IDENTIFIER)
                 pass
 
@@ -1449,11 +1432,11 @@ class LarishaParser ( Parser ):
                 localctx = LarishaParser.ParenthesizedExpressionContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 155
+                self.state = 152
                 self.match(LarishaParser.T__3)
-                self.state = 156
+                self.state = 153
                 self.expression(0)
-                self.state = 157
+                self.state = 154
                 self.match(LarishaParser.T__4)
                 pass
 
@@ -1461,9 +1444,9 @@ class LarishaParser ( Parser ):
                 localctx = LarishaParser.NotExpressionContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 159
-                self.match(LarishaParser.T__8)
-                self.state = 160
+                self.state = 156
+                self.match(LarishaParser.T__7)
+                self.state = 157
                 self.expression(7)
                 pass
 
@@ -1471,9 +1454,9 @@ class LarishaParser ( Parser ):
                 localctx = LarishaParser.NegativeExpressionContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 161
-                self.match(LarishaParser.T__9)
-                self.state = 162
+                self.state = 158
+                self.match(LarishaParser.T__8)
+                self.state = 159
                 self.expression(6)
                 pass
 
@@ -1481,79 +1464,79 @@ class LarishaParser ( Parser ):
                 localctx = LarishaParser.FunctionCallExpressionContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 163
+                self.state = 160
                 self.functionCall()
                 pass
 
 
             self._ctx.stop = self._input.LT(-1)
-            self.state = 184
+            self.state = 181
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,13,self._ctx)
+            _alt = self._interp.adaptivePredict(self._input,12,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
-                    self.state = 182
+                    self.state = 179
                     self._errHandler.sync(self)
-                    la_ = self._interp.adaptivePredict(self._input,12,self._ctx)
+                    la_ = self._interp.adaptivePredict(self._input,11,self._ctx)
                     if la_ == 1:
                         localctx = LarishaParser.MultiplicativeExpressionContext(self, LarishaParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 166
+                        self.state = 163
                         if not self.precpred(self._ctx, 5):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 5)")
-                        self.state = 167
+                        self.state = 164
                         self.multOp()
-                        self.state = 168
+                        self.state = 165
                         self.expression(6)
                         pass
 
                     elif la_ == 2:
                         localctx = LarishaParser.AdditiveExpressionContext(self, LarishaParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 170
+                        self.state = 167
                         if not self.precpred(self._ctx, 4):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 4)")
-                        self.state = 171
+                        self.state = 168
                         self.addOp()
-                        self.state = 172
+                        self.state = 169
                         self.expression(5)
                         pass
 
                     elif la_ == 3:
                         localctx = LarishaParser.ComparativeExpressionContext(self, LarishaParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 174
+                        self.state = 171
                         if not self.precpred(self._ctx, 3):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 3)")
-                        self.state = 175
+                        self.state = 172
                         self.compreOp()
-                        self.state = 176
+                        self.state = 173
                         self.expression(4)
                         pass
 
                     elif la_ == 4:
                         localctx = LarishaParser.BooleanExpressionContext(self, LarishaParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 178
+                        self.state = 175
                         if not self.precpred(self._ctx, 2):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 2)")
-                        self.state = 179
+                        self.state = 176
                         self.boolOp()
-                        self.state = 180
+                        self.state = 177
                         self.expression(3)
                         pass
 
              
-                self.state = 186
+                self.state = 183
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,13,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,12,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -1599,9 +1582,9 @@ class LarishaParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 187
+            self.state = 184
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << LarishaParser.T__10) | (1 << LarishaParser.T__11) | (1 << LarishaParser.T__12))) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << LarishaParser.T__9) | (1 << LarishaParser.T__10) | (1 << LarishaParser.T__11))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1650,9 +1633,9 @@ class LarishaParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 189
+            self.state = 186
             _la = self._input.LA(1)
-            if not(_la==LarishaParser.T__9 or _la==LarishaParser.T__13):
+            if not(_la==LarishaParser.T__8 or _la==LarishaParser.T__12):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1701,9 +1684,9 @@ class LarishaParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 191
+            self.state = 188
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << LarishaParser.T__14) | (1 << LarishaParser.T__15) | (1 << LarishaParser.T__16) | (1 << LarishaParser.T__17) | (1 << LarishaParser.T__18) | (1 << LarishaParser.T__19))) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << LarishaParser.T__13) | (1 << LarishaParser.T__14) | (1 << LarishaParser.T__15) | (1 << LarishaParser.T__16) | (1 << LarishaParser.T__17) | (1 << LarishaParser.T__18))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1752,9 +1735,9 @@ class LarishaParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 193
+            self.state = 190
             _la = self._input.LA(1)
-            if not(_la==LarishaParser.T__20 or _la==LarishaParser.T__21):
+            if not(_la==LarishaParser.T__19 or _la==LarishaParser.T__20):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -1817,7 +1800,7 @@ class LarishaParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 195
+            self.state = 192
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << LarishaParser.BOOL) | (1 << LarishaParser.STRING) | (1 << LarishaParser.FLOAT) | (1 << LarishaParser.INTEGER) | (1 << LarishaParser.CHAR))) != 0)):
                 self._errHandler.recoverInline(self)
@@ -1874,20 +1857,20 @@ class LarishaParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 197
-            self.match(LarishaParser.T__22)
-            self.state = 201
+            self.state = 194
+            self.match(LarishaParser.T__21)
+            self.state = 198
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << LarishaParser.T__2) | (1 << LarishaParser.T__24) | (1 << LarishaParser.T__25) | (1 << LarishaParser.WHILE) | (1 << LarishaParser.EXPORT) | (1 << LarishaParser.IMPORT) | (1 << LarishaParser.FUNCTION) | (1 << LarishaParser.IDENTIFIER))) != 0):
-                self.state = 198
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << LarishaParser.T__2) | (1 << LarishaParser.T__23) | (1 << LarishaParser.T__24) | (1 << LarishaParser.WHILE) | (1 << LarishaParser.EXPORT) | (1 << LarishaParser.IMPORT) | (1 << LarishaParser.FUNCTION) | (1 << LarishaParser.IDENTIFIER))) != 0):
+                self.state = 195
                 self.line()
-                self.state = 203
+                self.state = 200
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 204
-            self.match(LarishaParser.T__23)
+            self.state = 201
+            self.match(LarishaParser.T__22)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1931,8 +1914,8 @@ class LarishaParser ( Parser ):
         self.enterRule(localctx, 40, self.RULE_break)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 206
-            self.match(LarishaParser.T__24)
+            self.state = 203
+            self.match(LarishaParser.T__23)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1979,9 +1962,9 @@ class LarishaParser ( Parser ):
         self.enterRule(localctx, 42, self.RULE_returnStatement)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 208
-            self.match(LarishaParser.T__25)
-            self.state = 209
+            self.state = 205
+            self.match(LarishaParser.T__24)
+            self.state = 206
             self.expression(0)
         except RecognitionException as re:
             localctx.exception = re

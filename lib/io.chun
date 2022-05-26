@@ -1,0 +1,24 @@
+
+// file handling
+export readFile(file);
+export writeFile(file,data);
+export appendFile(file,data);
+export deleteFile(file);
+export renameFile(oldPath,newPath);
+export createFile(file);
+export copyFile(oldPath,newPath);
+export moveFile(oldPath,newPath);
+export existsFile(path);
+export isFile(path);
+export isDir(path);
+export createDir(path);
+export deleteDir(path);
+export getCurrentDir();
+
+// io
+export println(data);
+export print(data);
+export readLine(data);
+export printErr(data);
+export exit(code);
+export argv();
