@@ -1,0 +1,15 @@
+export init(a);
+export append(a,b);
+export insert(a,b,c);
+export remove(a,b);
+export removeAt(a,b);
+export pop(a);
+export tail(a);
+export head(a);
+export clear(a);
+export reverse(a);
+export sort(a);
+export toString(a);
+export indexOf(a,b);
+export valueOf(a,b);
+export toArray(a);

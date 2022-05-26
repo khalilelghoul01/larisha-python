@@ -1,0 +1,18 @@
+
+// http requests
+
+export httpGet(url);
+export httpPost(url,data);
+export httpPut(url,data);
+export httpDelete(url);
+export httpHead(url);
+export httpOptions(url);
+export httpPatch(url,data);
+export httpGetJson(url);
+export httpPostJson(url,data);
+export httpPutJson(url,data);
+export httpDeleteJson(url);
+export httpHeadJson(url);
+export httpOptionsJson(url);
+export httpPatchJson(url,data);
+

@@ -1,0 +1,4 @@
+export wait(seconds);
+export time();
+export timestamp();
+export date();

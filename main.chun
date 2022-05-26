@@ -1,0 +1,20 @@
+import "lib/io.chun";
+import "lib/http.chun";
+import "lib/selenium.chun";
+import "lib/time.chun";
+import "lib/math.chun";
+import "lib/string.chun";
+import "lib/array.chun";
+//io->println("Hello World!");
+//io->println(io->argv());
+
+driver = selenium->firefox(600, 600,false);
+selenium->get(driver,"https://brucelawson.co.uk/tests/html5-forms-demo.html");
+elem = selenium->findElement(driver,"css","#form-1");
+i = 0;
+while(i < 100){
+    selenium->sendKeys(elem,"Hello World!"); 
+    i = i + 5;
+    time->wait(1);
+}
+selenium->close(driver);

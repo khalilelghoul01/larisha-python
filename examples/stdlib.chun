@@ -1,0 +1,16 @@
+export println(a);
+fun main(){
+    
+}
+
+f = 1000000000000;
+
+fun pow2(a){
+    return a*a;
+}
+
+fun muliply(a,b){
+    return a*b;
+}
+
+main();

@@ -1,0 +1,16 @@
+export firefox(width,height,headless);
+export chrome(width,height,headless);
+export get(driver,url);
+export getTitle(driver);
+export getUrl(driver);
+export getPageSource(driver);
+export getCurrentWindowHandle(driver);
+export getWindowHandles(driver);
+export findElement(driver,by,value);
+export findElements(driver,by,value);
+export close(driver);
+export quit(driver);
+export sendKeys(element,keys);
+export clear(element);
+export click(element);
+export submit(element);
