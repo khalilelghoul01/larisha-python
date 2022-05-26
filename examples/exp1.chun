@@ -1,0 +1,6 @@
+fun lol(f) {
+    b = 1;
+    return b;
+}
+
+a = lol(10);
