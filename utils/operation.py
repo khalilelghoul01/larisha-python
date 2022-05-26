@@ -57,17 +57,17 @@ def add(left, right):
     if(common.getType(left) == "float" and common.getType(right) == "int"):
         return float(left + right)
     if(common.getType(left) == "string" and common.getType(right) == "int"):
-        return left + right
+        return left + str(right)
     if(common.getType(left) == "int" and common.getType(right) == "string"):
-        return left + right
+        return str(left) + right
     if(common.getType(left) == "string" and common.getType(right) == "float"):
-        return left + right
+        return left + str(right)
     if(common.getType(left) == "float" and common.getType(right) == "string"):
-        return left + right
+        return str(left) + right
     if(common.getType(left) == "string" and common.getType(right) == "bool"):
-        return left + right
+        return left + str(right)
     if(common.getType(left) == "bool" and common.getType(right) == "string"):
-        return left + right
+        return str(left) + right
     common.error(f"Cannot add {left} and {right}:\n\t{common.getType(left)} and {common.getType(right)} are not compatible")
 
 

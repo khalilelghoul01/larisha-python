@@ -1,5 +1,6 @@
 from ast import match_case
 from inspect import Parameter
+import inspect
 from multiprocessing.dummy import Condition
 import sys
 from antlr4 import *
@@ -44,7 +45,6 @@ class MyVisitor(LarishaVisitor):
     def visitAssignment(self, ctx: LarishaParser.AssignmentContext):
         name = ctx.IDENTIFIER().getText()
         value = self.visit(ctx.expression())
-        print(f"{name} = {value}")
         variables[name] = value
         return value
 
@@ -188,12 +188,17 @@ class MyVisitor(LarishaVisitor):
             exportedFunction = getattr(methods, name)
         except Exception as e:
             common.error(f"Function {name} is not defined")
-        print(exportedFunction)
+        functionsExportParams = inspect.getfullargspec(exportedFunction).args
         parameters = ctx.parameters()
         if(parameters):
             parameters = parameters.IDENTIFIER()
             parameters = [param.getText() for param in parameters]
-        print(f"Exporting function {name} with parameters {parameters}")
+            if(len(parameters) != len(functionsExportParams)):
+                common.error(f"{name} expects {len(functionsExportParams)} arguments, but {len(parameters)} were given")
+        else:
+            if(len(functionsExportParams) != 0):
+                common.error(f"{name} expects {len(functionsExportParams)} arguments, but none were given")
+        functionsExport[name] = exportedFunction
 
 
 
@@ -216,6 +221,12 @@ def functionCallHandler(self, ctx: LarishaParser.FunctionCallContext):
     if(argsBase):
         args = argsBase.expression()
         args = [self.visit(arg) for arg in args]
+    if(functionName in functionsExport):
+        functionToCall = functionsExport[functionName]
+        argsToCall = inspect.getfullargspec(functionToCall).args
+        if(len(args) != len(argsToCall)):
+            common.error(f"{functionName} expects {len(argsToCall)} arguments, but {len(args)} were given")
+        return functionsExport[functionName](*args)
     function = functions.get(functionName, None)
     if function is None:
         common.error(f"Function {functionName} is not defined")
@@ -228,8 +239,6 @@ def functionCallHandler(self, ctx: LarishaParser.FunctionCallContext):
     }
     for i in range(len(function["args"])):
         functionLocal["variables"][function["args"][i]] = args[i]
-
-    print(functionLocal["variables"])
 
     body = function["body"]
     for line in body.line():
@@ -330,8 +339,6 @@ def handleExpression(self, ctx: LarishaParser.ExpressionContext,functionName: st
             case _:
                 common.error(f"Unknown operator {op}")
     elif(isinstance(ctx, LarishaParser.FunctionCallExpressionContext)):
-        print("function call")
-        print(ctx.functionCall().getText())
         valueEL = functionCallInternal(self, ctx.functionCall(),functionName,functionLocal).value
     return valueEL
 
@@ -340,10 +347,15 @@ def functionCallInternal(self, ctx: LarishaParser.FunctionCallContext, functionN
     functionName = ctx.IDENTIFIER().getText()
     argsBase = ctx.arguments()
     args = []
-    print(functionLocal["variables"])
     if(argsBase):
         args = argsBase.expression()
         args = [handleExpression(self,arg,functionName,functionLocal) for arg in args]
+    if(functionName in functionsExport):
+        functionToCall = functionsExport[functionName]
+        argsToCall = inspect.getfullargspec(functionToCall).args
+        if(len(args) != len(argsToCall)):
+            common.error(f"{functionName} expects {len(argsToCall)} arguments, but {len(args)} were given")
+        return functionsExport[functionName](*args)
     function = functions.get(functionName, None)
     if function is None:
         common.error(f"Function {functionName} is not defined")
