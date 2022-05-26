@@ -1,9 +1,8 @@
 export println(a);
-import "stdlib.chun";
 
 fun main(){
     println(__tag__);
-    println(add(1,2));
+    println(add(11,2));
 }
 
 fun add(a,b){

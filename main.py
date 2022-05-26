@@ -14,4 +14,4 @@ currentWorkingDir = os.path.dirname(os.path.realpath(path))
 with open(path, "r") as f:
     code = f.read()
 os.chdir(currentWorkingDir)
-run_code(code)
+run_code(code,os.path.basename(path).replace(".chun",""))

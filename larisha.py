@@ -24,7 +24,7 @@ functionsExport = {}
 ##########################
 # Helper functions
 ##########################
-def run_code(code: str):
+def run_code(code: str, filename: str):
     data = InputStream(code)
     # lexer
     lexer = LarishaLexer(data)
@@ -33,28 +33,37 @@ def run_code(code: str):
     parser = LarishaParser(stream)
     tree = parser.program()
     # evaluator
-    visitor = LarishaInterpreter()
+    visitor = LarishaInterpreter(filename)
     return visitor.visit(tree)
 
+def readFile(filename: str):
+    try:
+        with open(filename, "r") as file:
+            return file.read()
+    except FileNotFoundError:
+        common.error(f"File {filename} not found")
 
 ##########################
 # Main
 ##########################
 
-def get_username():
-    from pwd import getpwuid
-    from os import getuid
-    return getpwuid(getuid())[0]
+
 
 
 class LarishaInterpreter(LarishaVisitor):
-    def __init__(self):
-        pass
+    def __init__(self,filename):
+        self.filename = filename
+        if filename not in variables:
+            variables[filename] = {}
+        if filename not in functions:
+            functions[filename] = {}
+            functionsExport[filename] = {}
+        variables[filename]['__tag__'] = filename
 
     def visitAssignment(self, ctx: LarishaParser.AssignmentContext):
         name = ctx.IDENTIFIER().getText()
         value = self.visit(ctx.expression())
-        variables[name] = value
+        variables[self.filename][name] = value
         return value
 
     def visitConstantExpression(self, ctx: LarishaParser.ConstantExpressionContext):
@@ -63,7 +72,7 @@ class LarishaInterpreter(LarishaVisitor):
 
     def visitIdentifierExpression(self, ctx: LarishaParser.IdentifierExpressionContext):
         name = ctx.IDENTIFIER().getText()
-        value = variables.get(name, None)
+        value = variables.get(self.filename, None).get(name, None)
         if value is None:
             common.error(f"Variable {name} is not defined")
         return value
@@ -174,14 +183,14 @@ class LarishaInterpreter(LarishaVisitor):
             args = argsBase.IDENTIFIER()
             args = [arg.getText() for arg in args]
         body = ctx.block()
-        if(functionName in functions):
+        if(functionName in functions[self.filename]):
             common.error(f"Function {functionName} is already defined")
         function = {
             "name": functionName,
             "args": args,
             "body": body
         }
-        functions[functionName] = function
+        functions[self.filename][functionName] = function
 
     def visitFunctionCall(self, ctx: LarishaParser.FunctionCallContext):
         return functionCallHandler(self,ctx)
@@ -191,7 +200,7 @@ class LarishaInterpreter(LarishaVisitor):
     
     def visitExport(self, ctx: LarishaParser.ExportContext):
         name = ctx.IDENTIFIER().getText()
-        if(name in functionsExport):
+        if(name in functionsExport[self.filename]):
             common.error(f"Function {name} is already exported")
         try:
             exportedFunction = getattr(methods, name)
@@ -207,15 +216,21 @@ class LarishaInterpreter(LarishaVisitor):
         else:
             if(len(functionsExportParams) != 0):
                 common.error(f"{name} expects {len(functionsExportParams)} arguments, but none were given")
-        functionsExport[name] = exportedFunction
+        functionsExport[self.filename][name] = exportedFunction
 
     def visitImportLib(self, ctx: LarishaParser.ImportLibContext):
         nameAs = ctx.IDENTIFIER()
+        stringLibPath = ctx.STRING().getText()[1:-1]
+        if(stringLibPath.endswith(".chun")):
+            stringLib = stringLibPath[:-5]
+        else:
+            common.error(f"{stringLibPath} is not a chun file")
         if(nameAs):
             nameAs = nameAs.getText()
-        stringLib = ctx.STRING().getText()[1:-1]
-        print(stringLib)
-        return super().visitImportLib(ctx)
+            stringLib = nameAs
+            
+        run_code(readFile(stringLibPath), stringLib)
+        
 
 
 
@@ -241,13 +256,13 @@ def functionCallHandler(self, ctx: LarishaParser.FunctionCallContext):
     if(argsBase):
         args = argsBase.expression()
         args = [self.visit(arg) for arg in args]
-    if(functionName in functionsExport):
-        functionToCall = functionsExport[functionName]
+    if(functionName in functionsExport[self.filename]):
+        functionToCall = functionsExport[self.filename][functionName]
         argsToCall = inspect.getfullargspec(functionToCall).args
         if(len(args) != len(argsToCall)):
             common.error(f"{functionName} expects {len(argsToCall)} arguments, but {len(args)} were given")
-        return functionsExport[functionName](*args)
-    function = functions.get(functionName, None)
+        return functionsExport[self.filename][functionName](*args)
+    function = functions.get(self.filename,None).get(functionName, None)
     if function is None:
         common.error(f"Function {functionName} is not defined")
     if len(function["args"]) != len(args):
@@ -294,8 +309,8 @@ def handleExpression(self, ctx: LarishaParser.ExpressionContext,functionName: st
         variableName = identifier.getText()
         if variableName in functionLocal["variables"]:
             valueEL = functionLocal["variables"][variableName]
-        elif variableName in variables:
-            valueEL = variables[variableName]
+        elif variableName in variables[self.filename]:
+            valueEL = variables[self.filename][variableName]
         else:
             common.error(f"Variable {variableName} is not defined")
     elif(isinstance(ctx, LarishaParser.ConstantExpressionContext)):
@@ -370,13 +385,13 @@ def functionCallInternal(self, ctx: LarishaParser.FunctionCallContext, functionN
     if(argsBase):
         args = argsBase.expression()
         args = [handleExpression(self,arg,functionName,functionLocal) for arg in args]
-    if(functionName in functionsExport):
-        functionToCall = functionsExport[functionName]
+    if(functionName in functionsExport[self.filename]):
+        functionToCall = functionsExport[self.filename][functionName]
         argsToCall = inspect.getfullargspec(functionToCall).args
         if(len(args) != len(argsToCall)):
             common.error(f"{functionName} expects {len(argsToCall)} arguments, but {len(args)} were given")
-        return functionsExport[functionName](*args)
-    function = functions.get(functionName, None)
+        return functionsExport[self.filename][functionName](*args)
+    function = functions.get(self.filename,None).get(functionName, None)
     if function is None:
         common.error(f"Function {functionName} is not defined")
     if len(function["args"]) != len(args):
