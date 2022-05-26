@@ -61,6 +61,21 @@ class LarishaInterpreter(LarishaVisitor):
             functions[filename] = {}
             functionsExport[filename] = {}
         variables[filename]['__tag__'] = filename
+        variables[filename]['__version__'] = "1.0"
+        variables[filename]['__author__'] = "Khalil El Ghoul"
+        variables[filename]['__email__'] = "khalilelghoul0&@gmail.com"
+        variables[filename]['__license__'] = "MIT"
+        variables[filename]['__copyright__'] = "Copyright (c) 2019 Khalil El Ghoul"
+        variables[filename]['__status__'] = "Development"
+        variables[filename]['__description__'] = "Larisha interpreter"
+
+    def visitProgram(self, ctx: LarishaParser.ProgramContext):
+        for statement in ctx.line():
+            try:
+                self.visit(statement)
+            except Exception as e:
+                common.error(f"Error: {e}")
+            # print(variables.get(self.filename, ""))
 
     def visitAssignment(self, ctx: LarishaParser.AssignmentContext):
         name = ctx.IDENTIFIER().getText()
@@ -96,6 +111,7 @@ class LarishaInterpreter(LarishaVisitor):
             return variables[filename][name_]
         else:
             value = variables.get(self.filename, None).get(name, None)
+            print(value)
             if value is None:
                 common.error(f"Variable {name} is not defined")
         return value

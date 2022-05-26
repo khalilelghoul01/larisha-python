@@ -113,3 +113,17 @@ JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't fin
 JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
 1653586671559	Marionette	INFO	Stopped listening on port 61172
 console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1653588282032	geckodriver	INFO	Listening on 127.0.0.1:62275
+1653588285094	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "62276" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Khalil\\AppData\\Local\\Temp\\rust_mozprofilen7iO6R"
+1653588285425	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Khalil\\AppData\\Local\\Temp\\rust_mozprofilen7iO6R\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:62276/devtools/browser/60399594-e0b2-4a90-89ba-874d4f3b4f65
+1653588287158	Marionette	INFO	Listening on port 62301
+Read port: 62301
+1653588287203	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1653588307978	Marionette	INFO	Stopped listening on port 62301
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+
