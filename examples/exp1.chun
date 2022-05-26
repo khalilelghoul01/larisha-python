@@ -1,6 +1,11 @@
-fun lol(f) {
-    b = f;
-    return b;
+fun a(x) {
+    return x * x;
+}
+fun lol(f, x) {
+    bb= f * x;
+    return a(bb);
+    a = bb;
 }
 
-a = lol(10);
+a = (lol(10, 20));
+export print(a,b,c,d,e,f);

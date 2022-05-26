@@ -89,6 +89,15 @@ class LarishaListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by LarishaParser#export.
+    def enterExport(self, ctx:LarishaParser.ExportContext):
+        pass
+
+    # Exit a parse tree produced by LarishaParser#export.
+    def exitExport(self, ctx:LarishaParser.ExportContext):
+        pass
+
+
     # Enter a parse tree produced by LarishaParser#arguments.
     def enterArguments(self, ctx:LarishaParser.ArgumentsContext):
         pass

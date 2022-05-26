@@ -2,7 +2,7 @@ grammar Larisha;
 
 program: line* EOF;
 
-line: statement | ifBlock | whileBlock | break ';'| functionDefinition | functionCall ';' | returnStatement ';' ;
+line: statement | ifBlock | whileBlock | break ';'| functionDefinition | functionCall ';' | returnStatement ';' | export ;
 
 statement: ( assignment ) ';';
 
@@ -19,6 +19,10 @@ WHILE: 'while';
 functionDefinition: FUNCTION IDENTIFIER '(' parameters? ')' block;
 
 functionCall: IDENTIFIER '(' arguments? ')' ;
+
+export: EXPORT IDENTIFIER '(' parameters? ')';
+
+EXPORT: 'export';
 
 arguments: expression (',' expression)*;
 FUNCTION: 'fun';
