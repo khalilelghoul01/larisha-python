@@ -248,6 +248,8 @@ class MyVisitor(LarishaVisitor):
         value = common.returnpoint(self.visit(ctx.expression()))
         return value
 
+    
+
 
 if __name__ == "__main__":
     args = sys.argv[1:]
