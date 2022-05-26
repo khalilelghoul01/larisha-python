@@ -36,6 +36,9 @@ class returnpoint:
     def getValue(self):
         return self.value
 
+    def __str__(self) -> str:
+        return f"returnpoint({self.value})"
+
 def error(msg:str):
     print("\033[91m[ERROR] " + msg + "\033[0m")
     exit(1)
