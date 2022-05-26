@@ -1,7 +1,12 @@
 import "lib/io.chun";
 import "lib/http.chun";
+import "lib/selenium.chun";
 
 
+//io->println("Hello World!");
+//io->println(io->argv());
 
-io->println("Hello World!");
-io->println(io->argv());
+//driver = selenium->firefox(600, 600,false);
+//selenium->get(driver,"https://brucelawson.co.uk/tests/html5-forms-demo.html");
+//selenium->sendKeys(selenium->findElement(driver,"css","#form-1"),"Hello World!"); 
+//selenium->close(driver);

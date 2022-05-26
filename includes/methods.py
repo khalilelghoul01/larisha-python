@@ -1,5 +1,8 @@
 
 
+import time as times
+from selenium.webdriver.common.keys import Keys
+from selenium import webdriver
 import math
 import os
 import shutil
@@ -281,58 +284,330 @@ def swapCase(a):
 #####################################################
 
 def floor(a):
-	return math.floor(a)
+    return math.floor(a)
+
+
 def ceil(a):
-	return math.ceil(a)
+    return math.ceil(a)
+
+
 def round(a):
-	return math.round(a)
+    return math.round(a)
+
+
 def abs(a):
-	return math.fabs(a)
+    return math.fabs(a)
+
+
 def sign(a):
-	return math.copysign(1,a)
+    return math.copysign(1, a)
+
+
 def sqrt(a):
-	return math.sqrt(a)
-def pow(a,b):
-	return a**b
+    return math.sqrt(a)
+
+
+def pow(a, b):
+    return a**b
+
+
 def exp(a):
-	return math.exp(a)
+    return math.exp(a)
+
+
 def log(a):
-	return math.log(a)
+    return math.log(a)
+
+
 def log2(a):
-	return math.log2(a)
+    return math.log2(a)
+
+
 def log10(a):
-	return math.log10(a)
+    return math.log10(a)
+
+
 def sin(a):
-	return math.sin(a)
+    return math.sin(a)
+
+
 def cos(a):
-	return math.cos(a)
+    return math.cos(a)
+
+
 def tan(a):
-	return math.tan(a)
+    return math.tan(a)
+
+
 def asin(a):
-	return math.asin(a)
+    return math.asin(a)
+
+
 def acos(a):
-	return math.acos(a)
+    return math.acos(a)
+
+
 def atan(a):
-	return math.atan(a)
-def atan2(a,b):
-	return  math.atan2(a,b)
+    return math.atan(a)
+
+
+def atan2(a, b):
+    return math.atan2(a, b)
+
+
 def sinh(a):
-	return math.sinh(a)
+    return math.sinh(a)
+
+
 def cosh(a):
-	return math.cosh(a)
+    return math.cosh(a)
+
+
 def tanh(a):
-	return math.tanh(a)
+    return math.tanh(a)
+
+
 def asinh(a):
-	return math.asinh(a)
+    return math.asinh(a)
+
+
 def acosh(a):
-	return  math.acosh(a)
+    return math.acosh(a)
+
+
 def atanh(a):
-	return  math.atanh(a)
+    return math.atanh(a)
+
+
 def random(a):
-	return random.random()
-def randomInt(a,b):
-	return random.randint(a,b)
-def randomFloat(a,b):
-	return random.uniform(a,b)
-def randomGaussian(a,b):
-	return random.gauss(a,b)
+    return random.random()
+
+
+def randomInt(a, b):
+    return random.randint(a, b)
+
+
+def randomFloat(a, b):
+    return random.uniform(a, b)
+
+
+def randomGaussian(a, b):
+    return random.gauss(a, b)
+
+
+#####################################################
+# array functions                                   #
+#####################################################
+
+
+def init(a):
+    return [0] * a
+
+
+def append(a, b):
+    return a.append(b)
+
+
+def insert(a, b, c):
+    return a.insert(b, c)
+
+
+def remove(a, b):
+    return a.remove(b)
+
+
+def removeAt(a, b):
+    return a.pop(b)
+
+
+def pop(a):
+    return a.pop()
+
+
+def tail(a):
+    return a[1:]
+
+
+def head(a):
+    return a[0]
+
+
+def clear(a):
+    return a.clear()
+
+
+def reverse(a):
+    return a.reverse()
+
+
+def sort(a):
+    return a.sort()
+
+
+def toString(a):
+    return str(a)
+
+
+def indexOf(a, b):
+    return a.index(b)
+
+
+def valueOf(a, b):
+    return a[b]
+
+
+def toArray(a):
+    return list(a)
+
+
+#####################################################
+# selenium functions                                #
+#####################################################
+
+
+def firefox(width, height, headless):
+    firefox = webdriver.Firefox()
+    firefox.set_window_size(width, height)
+    if headless:
+        firefox.set_window_position(0, 0)
+        firefox.set_window_size(1, 1)
+    return firefox
+
+
+def chrome(width, height, headless):
+    chrome = webdriver.Chrome()
+    chrome.set_window_size(width, height)
+    if headless:
+        chrome.set_window_position(0, 0)
+        chrome.set_window_size(1, 1)
+    return chrome
+
+
+def get(driver, url):
+    driver.get(url)
+
+
+def getTitle(driver):
+    return driver.title
+
+
+def getUrl(driver):
+    return driver.current_url
+
+
+def getPageSource(driver):
+    return driver.page_source
+
+
+def getCurrentWindowHandle(driver):
+    return driver.current_window_handle
+
+
+def getWindowHandles(driver):
+    return driver.window_handles
+
+
+def findElement(driver, by, value):
+    if by == "id":
+        return driver.find_element_by_id(value)
+    elif by == "name":
+        return driver.find_element_by_name(value)
+    elif by == "class":
+        return driver.find_element_by_class_name(value)
+    elif by == "css":
+        return driver.find_element_by_css_selector(value)
+    elif by == "xpath":
+        return driver.find_element_by_xpath(value)
+    elif by == "link":
+        return driver.find_element_by_link_text(value)
+    else:
+        return driver.find_element_by_tag_name(value)
+
+
+def findElements(driver, by, value):
+    if by == "id":
+        return driver.find_elements_by_id(value)
+    elif by == "name":
+        return driver.find_elements_by_name(value)
+    elif by == "class":
+        return driver.find_elements_by_class_name(value)
+    elif by == "css":
+        return driver.find_elements_by_css_selector(value)
+    elif by == "xpath":
+        return driver.find_elements_by_xpath(value)
+    elif by == "link":
+        return driver.find_elements_by_link_text(value)
+    else:
+        return driver.find_elements_by_tag_name(value)
+
+
+
+def close(driver):
+    driver.close()
+
+
+def quit(driver):
+    driver.quit()
+
+
+def sendKeys(element, keys):
+    keysDict = {
+        "ENTER": Keys.ENTER,
+        "TAB": Keys.TAB,
+        "SPACE": Keys.SPACE,
+        "BACKSPACE": Keys.BACKSPACE,
+        "DELETE": Keys.DELETE,
+        "ESCAPE": Keys.ESCAPE,
+        "PAGE_UP": Keys.PAGE_UP,
+        "PAGE_DOWN": Keys.PAGE_DOWN,
+        "END": Keys.END,
+
+        "HOME": Keys.HOME,
+        "LEFT": Keys.LEFT,
+        "UP": Keys.UP,
+        "RIGHT": Keys.RIGHT,
+        "DOWN": Keys.DOWN,
+        "INSERT": Keys.INSERT,
+        "F1": Keys.F1,
+        "F2": Keys.F2,
+        "F3": Keys.F3,
+        "F4": Keys.F4,
+        "F5": Keys.F5,
+        "F6": Keys.F6,
+        "F7": Keys.F7,
+        "F8": Keys.F8,
+        "F9": Keys.F9,
+        "F10": Keys.F10,
+        "F11": Keys.F11,
+        "F12": Keys.F12,
+    }
+    if(keys in keysDict):
+        element.send_keys(keysDict[keys])
+    else:
+        element.send_keys(keys)
+
+
+def clear(element):
+    element.clear()
+
+
+def click(element):
+    element.click()
+
+
+def submit(element):
+    element.submit()
+
+
+#####################################################
+# time functions                                    #
+#####################################################
+
+def wait(seconds):
+    times.sleep(seconds)
+def time():
+	return str(times.time() * 1000)
+def timestamp():
+	return str(times.time())
+def date():
+	return str(times.strftime("%Y-%m-%d"))
