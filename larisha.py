@@ -24,14 +24,14 @@ functions = {}
 def get_username():
     from pwd import getpwuid
     from os import getuid
-    return getpwuid(getuid())[ 0 ]
+    return getpwuid(getuid())[0]
 
-  
+
 class MyVisitor(LarishaVisitor):
     def __init__(self):
         pass
 
-    def visitAssignment(self, ctx:LarishaParser.AssignmentContext):
+    def visitAssignment(self, ctx: LarishaParser.AssignmentContext):
         name = ctx.IDENTIFIER().getText()
         value = self.visit(ctx.expression())
         print(f"{name} = {value}")
@@ -65,7 +65,7 @@ class MyVisitor(LarishaVisitor):
                 return operation.mod(left, right)
             case _:
                 common.error(f"Unknown operator {op}")
-        
+
     def visitAdditiveExpression(self, ctx: LarishaParser.AdditiveExpressionContext):
         left = self.visit(ctx.expression(0))
         right = self.visit(ctx.expression(1))
@@ -111,7 +111,7 @@ class MyVisitor(LarishaVisitor):
                 common.error(f"Unknown operator {op}")
 
     def visitIfBlock(self, ctx: LarishaParser.IfBlockContext):
-        condition = self.visit(ctx.expression());
+        condition = self.visit(ctx.expression())
         elseifblock = ctx.elseIfBlock()
         if condition:
             ret = self.visit(ctx.block())
@@ -128,14 +128,14 @@ class MyVisitor(LarishaVisitor):
                     return ret
 
     def visitWhileBlock(self, ctx: LarishaParser.WhileBlockContext):
-        condition = self.visit(ctx.expression());
+        condition = self.visit(ctx.expression())
         while condition:
             ret = self.visit(ctx.block())
             if isinstance(ret, common.breakpoint):
                 break
             if isinstance(ret, common.returnpoint):
                 return ret
-            condition = self.visit(ctx.expression());
+            condition = self.visit(ctx.expression())
 
     def visitBlock(self, ctx: LarishaParser.BlockContext):
         for line in ctx.line():
@@ -144,7 +144,7 @@ class MyVisitor(LarishaVisitor):
                 return ret
             if isinstance(ret, common.returnpoint):
                 return ret
-    
+
     def visitBreak(self, ctx: LarishaParser.BreakContext):
         return common.breakpoint()
 
@@ -185,33 +185,68 @@ class MyVisitor(LarishaVisitor):
         if(functionName not in functions):
             common.error(f"Function {functionName} is not defined")
         if(len(args) != len(functions[functionName]["args"])):
-            common.error(f"Function {functionName} expects {len(functions[functionName]['args'])} arguments, but got {len(args)}")
+            common.error(
+                f"Function {functionName} expects {len(functions[functionName]['args'])} arguments, but got {len(args)}")
         # returnValue = self.visit(functions[functionName]["body"])
         body = functions[functionName]["body"]
         for line in body.line():
+            ######################################
+            # Return statement
+            ######################################
             if(line.returnStatement()):
+                expression = line.returnStatement().expression()
+                if(expression):
+                    if(expression.IDENTIFIER()):
+                        variableName = expression.IDENTIFIER().getText()
+                        if(variableName in variables):
+                            return variables[variableName]
+                        elif(f"{functionName}.{variableName}" in variables):
+                            return variables[f"{functionName}.{variableName}"]
+                        else:
+                            common.error(
+                                f"Variable {variableName} is not defined")
                 returnValue = self.visit(line.returnStatement())
+            ######################################
+            # Break statement
+            ######################################
             if(line.break_()):
                 returnValue = self.visit(line.break_())
+            ######################################
+            # Assignment statement
+            ######################################
             if line.statement():
                 assignment = line.statement().assignment()
                 if(assignment):
                     variableName = assignment.IDENTIFIER().getText()
-                    value = self.visit(assignment.expression())
-                    variables[f"{functionName}.{variableName}"] = value
-                    returnValue = value
+                    ######################################
+                    # Assignment from parameter
+                    ######################################
+                    # value = self.visit(assignment.expression())
+                    expression = assignment.expression()
+                    if(expression.IDENTIFIER()):
+                        variableName = expression.IDENTIFIER().getText()
+                        if(variableName in variables):
+                            value = variables[variableName]
+                        elif(f"{functionName}.{variableName}" in variables):
+                            value = variables[f"{functionName}.{variableName}"]
+                        else:
+                            common.error(
+                                f"Variable {variableName} is not defined")
+                    else:
+                        value = self.visit(expression)
+                        variables[f"{functionName}.{variableName}"] = value
+                        returnValue = value
+                    print(variables)
             else:
                 returnValue = self.visit(line)
-        return returnValue.getValue() if isinstance(returnValue,common.returnpoint) else returnValue
+        return returnValue.getValue() if isinstance(returnValue, common.returnpoint) else returnValue
 
     def visitFunctionCallExpression(self, ctx: LarishaParser.FunctionCallExpressionContext):
         return self.visit(ctx.functionCall())
 
-
     def visitReturnStatement(self, ctx: LarishaParser.ReturnStatementContext):
         value = common.returnpoint(self.visit(ctx.expression()))
-        return  value
-
+        return value
 
 
 if __name__ == "__main__":
@@ -221,7 +256,7 @@ if __name__ == "__main__":
         sys.exit(1)
     with open(args[0], "r") as f:
         code = f.read()
-    data =  InputStream(code)
+    data = InputStream(code)
     # lexer
     lexer = LarishaLexer(data)
     stream = CommonTokenStream(lexer)
