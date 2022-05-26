@@ -1,11 +1,15 @@
-fun a(x) {
-    return x * x;
-}
-fun lol(f, x) {
-    bb= f * x;
-    return a(bb);
-    a = bb;
+export println(a)
+
+fun main(){
+    println(add(1,2));
 }
 
-a = (lol(10, 20));
-export print(a,b,c,d,e,f);
+fun add(a,b){
+    return a+b;
+}
+
+fun muliply(a,b){
+    return a*b;
+}
+
+main();
